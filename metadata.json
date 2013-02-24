@@ -1,0 +1,6 @@
+{
+  "description": "Remove the Application Menu on the top bar", 
+  "name": "Remove App Menu", 
+  "shell-version": ["3.6"], 
+  "uuid": "RemoveAppMenu@rastersoft.com"
+}
