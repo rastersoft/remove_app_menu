@@ -1,23 +1,21 @@
-/* Code derived by rastersoft from Remove App Menu (created by zpydr), to adapt it to Gnome Shell normative */
+// Code derived by rastersoft from Remove App Menu (created by zpydr), to adapt it to Gnome Shell normative
 
 const Main = imports.ui.main;
-
 var signalShow;
 
 function init() {
-    /* Nothing to do here */
+  //Do nothing
 }
 
 function enable() {
-
-    signalShow=Main.panel.statusArea.appMenu.actor.connect("show",function () {
-        Main.panel.statusArea.appMenu.actor.hide();
-    });
-    Main.panel.statusArea.appMenu.actor.hide();
+  signalShow=Main.panel.statusArea.appMenu.connect("show",function () {
+    Main.panel.statusArea.appMenu.hide();
+  });
+  Main.panel.statusArea.appMenu.hide();
 }
 
 function disable() {
-    Main.panel.statusArea.appMenu.actor.disconnect(signalShow);
-    Main.panel.statusArea.appMenu.actor.show();
+  Main.panel.statusArea.appMenu.disconnect(signalShow);
+  Main.panel.statusArea.appMenu.show();
 }
 
